@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3388340 */
+  src: url('/static/iconfont.ttf') format('truetype');
+}
+
+.xueya {
+  font-family: "xueya" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xieyaji:before {
+  content: "\e739";
+}
+

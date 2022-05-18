@@ -26,21 +26,21 @@
 									:title="item.useNick" />
 							</uni-list>
 						</template>
-						<text class="uni-body uni-mt-5">{{item.content.text}}</text>
+						<text class="uni-body uni-mt-5" style="font-size: 40rpx;">{{item.content.text}}</text>
 						<image style="width: 100%;" :src="item.content.img"></image>
 
 						<view slot="actions" class="card-actions">
 							<view class="card-actions-item" @click="actionsClick('分享')">
-								<uni-icons type="redo" size="18" color="#999"></uni-icons>
-								<text class="card-actions-item-text">分享</text>
+								<uni-icons type="redo" size="25" color="#999"></uni-icons>
+								<text style="font-size: 40rpx;" class="card-actions-item-text">分享</text>
 							</view>
 							<view class="card-actions-item" @click="actionsClick('点赞')">
-								<uni-icons type="heart" size="18" color="#999"></uni-icons>
-								<text class="card-actions-item-text">点赞</text>
+								<uni-icons type="heart" size="25" color="#999"></uni-icons>
+								<text style="font-size: 40rpx;" class="card-actions-item-text">点赞</text>
 							</view>
 							<view class="card-actions-item" @click="actionsClick('评论')">
-								<uni-icons type="chatbubble" size="18" color="#999"></uni-icons>
-								<text class="card-actions-item-text">评论</text>
+								<uni-icons type="chatbubble" size="25" color="#999"></uni-icons>
+								<text style="font-size: 40rpx;" class="card-actions-item-text">评论</text>
 							</view>
 						</view>
 
@@ -125,7 +125,7 @@
 				],
 				locals: [{
 					userAvatar: '../../static/tab_icon_8.png',
-					useNick: '王麻子',
+					useNick: '王爷爷',
 					content: {
 						text: '开心大药房的药挺便宜的，种类也挺多。',
 						img: '../../static/community/locals/localsImg1.png',
@@ -314,7 +314,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-top: 150rpx;
+		margin-top: 100rpx;
 	}
 
 	.search-bar {

@@ -28,13 +28,15 @@
 		{
 			"path": "pages/shop/shop",
 			"style": {
-				"navigationBarTitleText": "商城"
+				"navigationBarTitleText": "商城",
+				"navigationStyle": "custom"
 			}
 		},
 		{
 			"path": "pages/user/user",
 			"style": {
-				"navigationBarTitleText": "个人中心"
+				"navigationBarTitleText": "个人中心",
+				"navigationStyle": "custom"
 			}
 		},
 		{

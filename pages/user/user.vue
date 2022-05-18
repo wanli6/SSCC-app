@@ -1,6 +1,6 @@
 <template>
 	<view class="test2">
-		<view style="height: 300rpx;">
+		<view style="height: 200rpx;">
 			<text class="title">个人主页</text>
 		</view>
 		<uni-row>
@@ -49,7 +49,7 @@
 				</template>
 			</uni-list-item>
 		</uni-list>
-		<view style="background: transparent; height: 300rpx;"></view>
+		<view style="background: transparent; height: 600rpx;"></view>
 
 	</view>
 </template>
@@ -173,6 +173,6 @@
 		border-radius: 40rpx;
 		position: absolute;
 		margin-left: 250rpx;
-		margin-top: 150rpx;
+		margin-top: 100rpx;
 	}
 </style>
