@@ -1,0 +1,195 @@
+{
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/in",
+			"style": {
+				"navigationBarTitleText": "进入界面"
+			}
+		},
+		{
+			"path": "pages/shouye/shouye",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/community/community",
+			"style": {
+				"navigationBarTitleText": "社区",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/shop/shop",
+			"style": {
+				"navigationBarTitleText": "商城"
+			}
+		},
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		},
+		{
+			"path": "pages/dengluzhuce/download",
+			"style": {
+				"navigationBarTitleText": "登陆界面"
+			}
+		},
+		{
+			"path": "pages/dengluzhuce/register",
+			"style": {
+				"navigationBarTitleText": "注册界面"
+			}
+		},
+		{
+			"path": "pages/shouye/xueya",
+			"style": {
+				"navigationBarTitleText": "血压详情"
+			}
+		}, {
+			"path": "pages/community/chat",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "消息",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/community/chat",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "消息",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/community/chat",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "消息",
+				"enablePullDownRefresh": false
+			}
+		}
+
+		,
+		{
+			"path": "pages/community/chat",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "消息",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/shouye/xuetang",
+			"style": {
+				"navigationBarTitleText": "血糖详情"
+			}
+		},
+		{
+			"path": "pages/user/set",
+			"style": {
+				"navigationBarTitleText": "基础设置"
+			}
+		},
+		{
+			"path": "pages/user/personal",
+			"style": {
+				"navigationBarTitleText": "个人资料"
+			}
+		},
+		{
+			"path": "pages/user/question",
+			"style": {
+				"navigationBarTitleText": "每日问答"
+			}
+
+		},
+		{
+			"path": "pages/community/chat",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "消息",
+				"enablePullDownRefresh": false
+			}
+		}
+		,
+		{
+			"path": "pages/user/vip",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "会员服务",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/user/collect",
+			"style": {
+				"navigationBarTitleText": "个人收藏",
+				"enablePullDownRefresh": false
+			}
+
+
+		},
+		{
+			"path": "pages/shop/goodsDetail",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"enablePullDownRefresh": false
+			}
+
+		}, 
+		{
+			"path": "pages/shop/smartDevice",
+			"style": {
+				"navigationBarTitleText": "智能设备",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	],
+
+	"tabBar": {
+		"color": "#7a7e83",
+		"selectedColor": "#FFD305",
+		"backgroundColor": "#ffffff",
+		"borderStyle": "block",
+		"list": [{
+				"pagePath": "pages/shouye/shouye",
+				"text": "健康主页",
+				"iconPath": "static/home.jpg",
+				"selectedIconPath": "static/home.jpg"
+			},
+			{
+				"pagePath": "pages/community/community",
+				"text": "社区",
+				"iconPath": "static/tab_icon_4.png",
+				"selectedIconPath": "static/tab_icon_3.png"
+			},
+			{
+				"pagePath": "pages/shop/shop",
+				"text": "商城",
+				"iconPath": "static/tab_icon_7.png",
+				"selectedIconPath": "static/tab_icon_6.png"
+			},
+			{
+				"pagePath": "pages/user/user",
+				"text": "个人主页",
+				"iconPath": "static/tab_icon_9.png",
+				"selectedIconPath": "static/tab_icon_8.png"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}
