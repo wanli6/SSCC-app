@@ -290,7 +290,7 @@
 	}
 
 	.desc {
-		font-size: 12rpx;
+		font-size: 30rpx;
 	}
 
 	.col {
@@ -314,7 +314,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-top: 30rpx;
+		margin-top: 150rpx;
 	}
 
 	.search-bar {

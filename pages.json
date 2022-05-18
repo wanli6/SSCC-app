@@ -7,6 +7,7 @@
 		{
 			"path": "pages/in",
 			"style": {
+				"navigationStyle": "custom",
 				"navigationBarTitleText": "进入界面"
 			}
 		},
@@ -39,12 +40,14 @@
 		{
 			"path": "pages/dengluzhuce/download",
 			"style": {
+				"navigationStyle": "custom",
 				"navigationBarTitleText": "登陆界面"
 			}
 		},
 		{
 			"path": "pages/dengluzhuce/register",
 			"style": {
+				"navigationStyle": "custom",
 				"navigationBarTitleText": "注册界面"
 			}
 		},
@@ -152,6 +155,14 @@
 				"enablePullDownRefresh": false
 			}
 
+		},
+		{
+			"path": "pages/user/myorder",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "个人订单",
+				"enablePullDownRefresh": false
+			}
 		}
 	],
 

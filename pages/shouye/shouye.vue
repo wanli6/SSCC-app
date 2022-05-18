@@ -10,7 +10,7 @@
 			<text class="title2" style="font-size: 35rpx; margin-left: 75rpx;">心衰患者坐卧应当适当抬高下肢</text>
 		</view>
 		<view
-			style="width: 600rpx; margin-left: 45rpx; margin-top: 40rpx;border-style: solid; padding-top: 10rpx; padding-bottom: 10rpx; border-color: #11A0F1; border-width: 20rpx; ">
+			style="width: 600rpx; margin-left: 60rpx; margin-top: 40rpx;border-style: solid; padding-top: 10rpx; padding-bottom: 10rpx; border-color: #11A0F1; border-width: 20rpx; ">
 			<view>
 				<text class="text1" space="emsp">距离下次服药还有 {{time}}个小时\n</text>
 				<text class="text1" space="emsp">中午需要吃的药有：\n</text>
@@ -29,13 +29,13 @@
 					<image class="image2" mode="aspectFit" src="../../static/xueya.png">
 					</image>
 				</uni-col>
-				<uni-col :span="14">
+				<uni-col :span="13">
 					<text class="claim">今日血压:
 					</text>
 					<text class="claim state">{{states[index1]}}</text>
 				</uni-col>
 
-				<uni-col :span="4">
+				<uni-col :span="5">
 					<button class="detail" @click="xueya">详情</button>
 				</uni-col>
 			</uni-row>
@@ -57,13 +57,13 @@
 					<image class="image2" mode="aspectFit" src="../../static/xuetang.jpg">
 					</image>
 				</uni-col>
-				<uni-col :span="14">
+				<uni-col :span="13">
 					<text class="claim">今日血糖:
 					</text>
 					<text class="claim state">{{states1[index2]}}</text>
 				</uni-col>
 
-				<uni-col :span="4">
+				<uni-col :span="5">
 					<button class="detail" @click="xueya">详情</button>
 				</uni-col>
 			</uni-row>
@@ -143,7 +143,7 @@
 	}
 
 	.detail {
-		font-size: 20rpx;
+		font-size: 30rpx;
 		line-height: 150rpx;
 		background-color: transparent;
 	}
@@ -164,7 +164,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-top: 50rpx;
+		margin-top: 150rpx;
 	}
 
 	,
