@@ -1,5 +1,8 @@
 <template>
 	<view class="test2">
+		<view style="height: 300rpx;">
+		<text class="title">个人主页</text>
+		</view>
 		<uni-row >
 			<uni-col :span="9">
 				<image @click="to1" class="uimg" :src="imgadd" mode="aspectFit" style="border-radius: 50%;"></image>
@@ -39,7 +42,7 @@
 		</uni-grid>
 
 		<uni-list style="background: transparent;">
-			<uni-list-item style="background: transparent;" title="我的订单" rightText=">>">
+			<uni-list-item clickable @click="to5()" style="background: transparent;" title="我的订单" rightText=">>">
 			</uni-list-item>
 			<uni-list-item style="background: transparent;" title="我的咨询" rightText=">>">
 			</uni-list-item>
@@ -70,6 +73,7 @@
 </template>
 
 <script>
+	
 	export default {
 		data() {
 			return {
@@ -105,6 +109,11 @@
 				uni.navigateTo({
 					url:'./collect'
 				})
+			},
+			to5(){
+				uni.navigateTo({
+					url:'./myorder'
+				})
 			}
 		}
 
@@ -112,6 +121,8 @@
 </script>
 
 <style>
+
+
 	.test2 {
 		background-image: url('/static/background.jpg');
 		
@@ -153,5 +164,18 @@
 		justify-content: center;
 		padding: 15px 0;
 		height: 100rpx;
+	}
+	.title {
+		font-size: 50rpx;
+		color: white;
+		line-height: 100rpx;
+		text-align: center;
+		background-color: #11A0F1;
+		width: 250rpx;
+		height: 100rpx;
+		border-radius: 40rpx;
+		position: absolute;
+		margin-left: 250rpx;
+		margin-top: 150rpx;
 	}
 </style>

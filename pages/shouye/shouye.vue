@@ -164,7 +164,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-top: 50rpx;
+		margin-top: 150rpx;
 	}
 
 	,
