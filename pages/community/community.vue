@@ -290,7 +290,7 @@
 	}
 
 	.desc {
-		font-size: 12rpx;
+		font-size: 30rpx;
 	}
 
 	.col {

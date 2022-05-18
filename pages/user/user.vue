@@ -1,14 +1,14 @@
 <template>
 	<view class="test2">
 		<view style="height: 300rpx;">
-		<text class="title">个人主页</text>
+			<text class="title">个人主页</text>
 		</view>
-		<uni-row >
+		<uni-row>
 			<uni-col :span="9">
 				<image @click="to1" class="uimg" :src="imgadd" mode="aspectFit" style="border-radius: 50%;"></image>
 			</uni-col>
 			<uni-col :span="10">
-				<view style="width: 350rpx;" @click="to1">
+				<view style="width: 350rpx;" @click="to1()">
 					<text class="uname">{{uname}}</text>
 					<text class="usign">{{usignature}}</text>
 				</view>
@@ -27,7 +27,7 @@
 					<text class="text" style="font-weight: bolder; font-size: 30rpx;">每日问答</text>
 				</view>
 			</uni-grid-item>
-			<uni-grid-item style="height:200rpx;" >
+			<uni-grid-item style="height:200rpx;">
 				<view class="grid-item-box" @click="to4()">
 					<image src="../../static/collect.png" mode="aspectFit" style="width:80rpx; "></image>
 					<text class="text" style="font-weight: bolder; font-size: 30rpx;">个人收藏</text>
@@ -41,78 +41,74 @@
 			</uni-grid-item>
 		</uni-grid>
 
-		<uni-list style="background: transparent;">
-			<uni-list-item clickable @click="to5()" style="background: transparent;" title="我的订单" rightText=">>">
-			</uni-list-item>
-			<uni-list-item style="background: transparent;" title="我的咨询" rightText=">>">
-			</uni-list-item>
-			<uni-list-item style="background: transparent;" title="亲友管理" rightText=">>">
-			</uni-list-item>
-			<uni-list-item style="background: transparent;" title="病历上传" rightText=">>">
-			</uni-list-item>
-
-			<uni-list-item style="background: transparent;">
-				<!-- 自定义 header -->
-				<template v-slot:header>
-					<view class="slot-box">
-						
-					</view>
-				</template>
-				<!-- 自定义 body -->
+		<uni-list v-for="(item,index) in listt" style="background: transparent;" >
+			<uni-list-item clickable @click="to5()" style="background: transparent;" >
 				<template v-slot:body>
-				</template>
-				<!-- 自定义 footer-->
-				<template v-slot:footer>
-					<image class="slot-image"  mode="widthFix" style="height:650rpx;"></image>
+					<text class="slot-box slot-text list1" >{{item.name}}</text>
+					<text class="slot-box slot-text list1" style="margin-left: 500rpx;">>></text>
 				</template>
 			</uni-list-item>
 		</uni-list>
-
+		<view style="background: transparent; height: 300rpx;"></view>
 
 	</view>
 </template>
 
 <script>
-	
 	export default {
 		data() {
 			return {
 				imgadd: "/static/touxiang.jpg",
 				uname: "王同学",
-				usignature: "早睡早起，健康每一天"
+				usignature: "早睡早起，健康每一天",
+				listt:[
+					{
+						name:"我的订单",
+						src: './myorder'
+					},
+					{
+						name:"我的咨询",
+						src:''
+					},
+					{
+						name:"亲友管理",
+						src:''
+					},{
+						name:"病历上传",
+						src:''
+					}
+				]
 			}
 		},
-		methods:{
-			to()
-			{
+		methods: {
+			to() {
 				uni.navigateTo({
-					url:'./set'
+					url: './set'
 				})
 			},
-			to1()
-			{
+			to1() {
 				uni.navigateTo({
-					url:'./personal'
+					url: './personal'
 				})
 			},
-			to2(){
+			to2() {
 				uni.navigateTo({
-					url:'./vip'
+					url: './vip'
 				})
 			},
-			to3(){
+			to3() {
 				uni.navigateTo({
-					url:'./question'
+					url: './question'
 				})
 			},
-			to4(){
+			to4() {
 				uni.navigateTo({
-					url:'./collect'
+					url: './collect'
 				})
 			},
-			to5(){
+			to5() {
 				uni.navigateTo({
-					url:'./myorder'
+					url: './myorder'
 				})
 			}
 		}
@@ -121,13 +117,13 @@
 </script>
 
 <style>
-
-
 	.test2 {
 		background-image: url('/static/background.jpg');
-		
-	}
 
+	},
+	.list1{
+		margin-left: 10rpx;
+	}
 	,
 	.uimg {
 		width: 200rpx;
@@ -149,7 +145,7 @@
 	.usign {
 		font-size: 35rpx;
 		position: absolute;
-		margin-top: 125rpx;
+		margin-top: 150rpx;
 		margin-left: 10rpx;
 	}
 
@@ -165,6 +161,7 @@
 		padding: 15px 0;
 		height: 100rpx;
 	}
+
 	.title {
 		font-size: 50rpx;
 		color: white;
