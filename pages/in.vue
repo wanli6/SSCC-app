@@ -21,12 +21,12 @@
 <style>
 	.a {
 		width: 750rpx;
-		height: 1250rpx;
+		height: 1650rpx;
 	}
 	,
 	.b {
 		position: absolute;
-		margin-top: -426rpx;
+		margin-top: -550rpx;
 		margin-left: 245rpx;
 		width: 300rpx;
 		height: 85rpx;
