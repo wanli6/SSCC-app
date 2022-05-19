@@ -166,7 +166,17 @@
 				"enablePullDownRefresh": false
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/dengluzhuce/choose",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "选择版本",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        
+    ],
 
 	"tabBar": {
 		"color": "#7a7e83",

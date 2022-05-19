@@ -23,6 +23,8 @@ Vue.prototype.users = [
 		password: 'Wangmazi123',
 	}
 ];
+
+Vue.prototype.isOld = true
 // #ifdef VUE3
 import {
 	createSSRApp

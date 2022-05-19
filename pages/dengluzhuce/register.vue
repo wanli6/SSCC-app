@@ -14,7 +14,17 @@
 
 			<view class="login_from_input">
 				<view class="login_from_name">手机号</view>
-				<view class="login_from_fun"><input type="digit" maxlength="11" v-model="phoneNumer" placeholder="请输入正确的手机号"></view>
+				<view class="login_from_fun"><input type="digit" maxlength="11" v-model="phoneNumer"
+						placeholder="请输入正确的手机号"></view>
+			</view>
+
+			<view class="login_from_input">
+				<view class="login_from_name">年龄</view>
+				<view class="login_from_fun">
+					<picker mode="selector" @change="bindPickerChange" :value="index" :range="num">
+						<view>{{num[index]}}</view>
+					</picker>
+				</view>
 			</view>
 
 
@@ -26,19 +36,20 @@
 				</view>
 			</view>
 
-			<view class="login_from_input" @tap="handleTap('picker3')">
+			<view class="login_from_input">
 				<view>
 				</view>
 				<view class="login_from_name">请确认</view>
 				<view class="login_from_fun">
-					<input type="digit" password="true" v-model="password2" placeholder="请确认登录密码"></view>
+					<input type="digit" password="true" v-model="password2" placeholder="请确认登录密码">
+				</view>
 			</view>
 
 		</view>
 
 
 		<view class="login_from_dl">
-			<button @click="register">注册</button>
+			<button @click="register1">注册</button>
 		</view>
 
 		<view class="logo_xieyi">
@@ -59,31 +70,30 @@
 
 		data() {
 			return {
-				
+				index: '0',
 				username: '',
 				phoneNumer: '',
 				password: '',
 				password2: '',
-
-				value3: [],
-				label3: '',
-
 				gouxSta: false,
-				times: 60,
-				yzmbotshou: true,
-				yzmbothide: false
-
+				num: ['请选择', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+					27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,
+					52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76,
+					77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100
+				]
 
 			}
 		},
 		onLoad() {},
 		methods: {
+			bindPickerChange: function(e) {
+				console.log('picker发送选择改变，携带值为', e.detail.value)
+				this.index = e.detail.value
+			},
 			checkboxChange(e) {
 				this.gouxSta = !this.gouxSta;
 				console.log(this.gouxSta);
 			},
-
-
 			register() {
 				if (this.gouxSta == false) {
 					uni.showToast({
@@ -108,7 +118,7 @@
 					})
 					return
 				}
-				if(this.password != this.password2){
+				if (this.password != this.password2) {
 					uni.showToast({
 						title: '两次密码必须相同',
 						icon: "error",
@@ -126,25 +136,38 @@
 				}
 				let len = this.users.length
 				let user = {
-					username : this.username,
-					password : this.password
+					username: this.username,
+					password: this.password
 				}
-				if(this.users.push(user) == len+1){
+				if (this.users.push(user) == len + 1) {
 					uni.showToast({
 						title: '注册成功',
 						icon: "success",
 						duration: 2000
 					})
-					setTimeout(()=>{
+					setTimeout(() => {
 						uni.navigateTo({
-							url:'/pages/dengluzhuce/download'
+							url: '/pages/dengluzhuce/download'
 						})
-					},1000)
+					}, 1000)
 					return
 				}
-				
-			},
 
+			},
+			register1(){
+				
+				uni.showToast({
+					title: '注册成功',
+					icon: "success",
+					duration: 2000
+				})
+				setTimeout(() => {
+					uni.navigateTo({
+						url: '/pages/dengluzhuce/choose'
+					})
+				}, 1000)
+				return
+			}
 		}
 	}
 </script>
@@ -196,7 +219,7 @@
 		width: 80%;
 		display: flex;
 		flex-direction: row;
-		justify-content: flex-end;
+		/* justify-content: flex-end; */
 		align-items: center;
 		background-color: #ffffff;
 	}
@@ -217,11 +240,11 @@
 	}
 
 	.login_from_dl button {
-		width: 100%;
-		height: 50px;
-		line-height: 50px;
-		background: #fef204;
-		color: #000000;
+		width: 60%;
+		height: 80rpx;
+		line-height: 80rpx;
+		background: #50b3b0;
+		color: white;
 		border-radius: 50px;
 	}
 
