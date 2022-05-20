@@ -71,7 +71,7 @@
 						<view style="margin-left: 15rpx; font-size: 20rpx;"> 月销量 {{item.drugSale}}</view>
 						<view style="margin-left: 15rpx; font-size: 20rpx;">
 							<text style="font-weight: bolder;">{{item.drugShop}}</text>
-							<text style="margin-left: 240rpx; font-size: 25rpx;">进店 ></text>
+							<text style="margin-left: 240rpx; font-size: 25rpx;">进店</text>
 						</view>
 					</view>
 				</view>
@@ -90,7 +90,7 @@
 						drugTitle: '【仁和】阿莫西林胶囊',
 						drugUse: '250mg *40粒/盒',
 						drugTags: ['抗生素', '处方药', '咽炎'],
-						drugPriece: '￥12.5',
+						drugPriece: '￥20.3',
 						drugSale: '234',
 						drugShop: '键康大药房'
 					},
@@ -120,7 +120,7 @@
 						drugTitle: '【云南白药】云南白药创可贴',
 						drugUse: '1.5cm*2.3cm*100片/盒',
 						drugTags: ['皮肤感染', '常备药'],
-						drugPriece: '￥12.5',
+						drugPriece: '￥18.5',
 						drugSale: '500+',
 						drugShop: '键康大药房'
 					},

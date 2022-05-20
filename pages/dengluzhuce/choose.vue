@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<button @click="toOld" class="button b1" type="primary">老人版本</button>
+		<button @click="toNormal()" class="button b1" type="primary">老人版本</button>
 		<button @click="toNormal" class="button b2" type="primary">家属版本</button>
 	</view>
 </template>
@@ -13,13 +13,9 @@
 			}
 		},
 		methods: {
-			toOld(){
-				uni.navigateTo({
-					url:'/pages/shouye_old/shouye_old'
-				})
-			},
+			
 			toNormal(){
-				uni.navigateTo({
+				uni.switchTab({
 					url:'/pages/shouye/shouye'
 				})
 			},
