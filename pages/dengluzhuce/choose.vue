@@ -31,7 +31,7 @@
 
 <style>
 	.button{
-		background-color: #50b3b0;;
+		background-color: #50b3b0;
 		margin-top: 50rpx;
 		width: 60%;
 	}

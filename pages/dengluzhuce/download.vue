@@ -80,8 +80,9 @@
 				
 			},
 			ToDetail(){
+				
 				uni.navigateTo({
-					url:"/pages/deluzhuce/register"
+					url:"./register"
 				})
 			}
 			

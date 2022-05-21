@@ -176,6 +176,15 @@
             
         }
         
+        ,{
+            "path" : "pages/community/postDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 
 	"tabBar": {

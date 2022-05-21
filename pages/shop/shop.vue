@@ -35,7 +35,7 @@
 			</uni-grid>
 			<image src="../../static/shop1.png" mode="aspectFit" style="width: 750rpx;"></image>
 		</view>
-		<uni-list v-for="item in drugs">
+		<uni-list v-for="(item,index) in drugs" :key="index">
 			<uni-list-item>
 				<template v-slot:header>
 					<view class="uni-thumb shop-picture">
