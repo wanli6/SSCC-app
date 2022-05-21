@@ -1,10 +1,10 @@
 <template>
 	<view>
-		<view>
+		<!-- <view>
 			<text class="title">商城</text>
-		</view>
+		</view> -->
 		<view class="box">
-			<uni-row>
+			<uni-row style="margin-top: 75rpx;">
 				<uni-col :span="21">
 					<uni-search-bar class="uni-mt-10" radius="100" placeholder="输入想要购买的商品名称" clearButton="none"
 						cancelButton="none" @confirm="search" />

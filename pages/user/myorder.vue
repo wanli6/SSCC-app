@@ -4,7 +4,7 @@
 			<view class="picTxt acea-row row-between-wrapper">
 				<view style="display: flex; ">
 					<image src="/static/use/vip/back.png" mode="aspectFit"
-						style="height: 125rpx; width: 20rpx; margin-left: 30rpx;" @click="back()"></image>
+						style="height: 175rpx; width: 20rpx; margin-left: 30rpx;" @click="back()"></image>
 					<view class="name">个人订单</view>
 				</view>
 			</view>
@@ -49,7 +49,7 @@
 						<image class="shop1" :src="item.img" mode="aspectFit"></image>
 					</uni-col>
 					<uni-col :span="12" class="shopname">
-						<text space="ensp">{{item.shopname}}</text>
+						<text space="ensp" style="font-size: 35rpx;">{{item.shopname}}</text>
 					</uni-col>
 					<uni-col :span="5" class="price">
 						<text space="emsp">￥{{item.price}}\n x{{item.num}}</text>
@@ -59,6 +59,169 @@
 					<text class="zongji">共{{item.num}}件商品，总金额</text>
 					<text class="sumprice">￥{{item.price*item.num}}</text>
 				</view>
+				<view class="btnview">
+					<uni-row>
+						<uni-col :span="9" style="margin-left: 170rpx; margin-bottom: 10rpx;">
+							<button class="btn" style="background-color: #F1F1F1;color: #8F939C;">取消订单</button>
+						</uni-col>
+						<uni-col :span="9">
+							<button class="btn">立即付款</button>
+						</uni-col>
+					</uni-row>
+				</view>
+			</view>
+		</view>
+
+
+		<view v-if="Isselect==1" style="margin-top: 15rpx;">
+			<view v-for="(item,index) in shopper">
+				<uni-list :border="false" class="list1">
+					<uni-list-item
+						style="background-color: #8bd7ff; border-top-right-radius: 20rpx;border-top-left-radius: 20rpx;">
+						<template v-slot:header>
+							<view>
+								<text class="texttime">{{item.time}}</text>
+								<text class="status"> 待发货</text>
+							</view>
+						</template>
+					</uni-list-item>
+				</uni-list>
+				<uni-row class="list1 row1" style="margin: auto;">
+					<uni-col :span="6">
+						<image class="shop1" :src="item.img" mode="aspectFit"></image>
+					</uni-col>
+					<uni-col :span="12" class="shopname">
+						<text space="ensp" style="font-size: 35rpx;">{{item.shopname}}</text>
+					</uni-col>
+					<uni-col :span="5" class="price">
+						<text space="emsp">￥{{item.price}}\n x{{item.num}}</text>
+					</uni-col>
+				</uni-row>
+				<view class="sum">
+					<text class="zongji">共{{item.num}}件商品，总金额</text>
+					<text class="sumprice">￥{{item.price*item.num}}</text>
+				</view>
+				<view class="btnview">
+					<uni-row>
+
+						<uni-col :span="9">
+							<button class="btn" style="margin-left: 450rpx;">查看订单</button>
+						</uni-col>
+					</uni-row>
+				</view>
+			</view>
+		</view>
+
+		<view v-if="Isselect==2" style="margin-top: 15rpx;">
+			<view v-for="(item,index) in shopper">
+				<uni-list :border="false" class="list1">
+					<uni-list-item
+						style="background-color: #8bd7ff; border-top-right-radius: 20rpx;border-top-left-radius: 20rpx;">
+						<template v-slot:header>
+							<view>
+								<text class="texttime">{{item.time}}</text>
+								<text class="status"> 待收货</text>
+							</view>
+						</template>
+					</uni-list-item>
+				</uni-list>
+				<uni-row class="list1 row1" style="margin: auto;">
+					<uni-col :span="6">
+						<image class="shop1" :src="item.img" mode="aspectFit"></image>
+					</uni-col>
+					<uni-col :span="12" class="shopname">
+						<text space="ensp" style="font-size: 35rpx;">{{item.shopname}}</text>
+					</uni-col>
+					<uni-col :span="5" class="price">
+						<text space="emsp">￥{{item.price}}\n x{{item.num}}</text>
+					</uni-col>
+				</uni-row>
+				<view class="sum">
+					<text class="zongji">共{{item.num}}件商品，总金额</text>
+					<text class="sumprice">￥{{item.price*item.num}}</text>
+				</view>
+				<view class="btnview">
+					<uni-row>
+						<uni-col :span="9" style="margin-left: 170rpx; margin-bottom: 10rpx;">
+							<button class="btn" style="background-color: #F1F1F1;color: #8F939C;">退货/售后</button>
+						</uni-col>
+						<uni-col :span="9">
+							<button class="btn">查看物流</button>
+						</uni-col>
+					</uni-row>
+				</view>
+			</view>
+		</view>
+
+		<view v-if="Isselect==3" style="margin-top: 15rpx;">
+			<view v-for="(item,index) in shopper">
+				<uni-list :border="false" class="list1">
+					<uni-list-item
+						style="background-color: #8bd7ff; border-top-right-radius: 20rpx;border-top-left-radius: 20rpx;">
+						<template v-slot:header>
+							<view>
+								<text class="texttime">{{item.time}}</text>
+								<text class="status"> 待评价</text>
+							</view>
+						</template>
+					</uni-list-item>
+				</uni-list>
+				<uni-row class="list1 row1" style="margin: auto;">
+					<uni-col :span="6">
+						<image class="shop1" :src="item.img" mode="aspectFit"></image>
+					</uni-col>
+					<uni-col :span="12" class="shopname">
+						<text space="ensp" style="font-size: 35rpx;">{{item.shopname}}</text>
+					</uni-col>
+					<uni-col :span="5" class="price">
+						<text space="emsp">￥{{item.price}}\n x{{item.num}}</text>
+					</uni-col>
+				</uni-row>
+				<view class="sum">
+					<text class="zongji">共{{item.num}}件商品，总金额</text>
+					<text class="sumprice">￥{{item.price*item.num}}</text>
+				</view>
+				<view class="btnview">
+					<uni-row>
+
+						<uni-col :span="9">
+							<button class="btn" style="margin-left: 450rpx;">去评价</button>
+						</uni-col>
+					</uni-row>
+				</view>
+			</view>
+		</view>
+
+		<view v-if="Isselect==4" style="margin-top: 15rpx;">
+			<view v-for="(item,index) in shopper">
+				<uni-list :border="false" class="list1">
+					<uni-list-item
+						style="background-color: #8bd7ff; border-top-right-radius: 20rpx;border-top-left-radius: 20rpx;">
+						<template v-slot:header>
+							<view>
+								<text class="texttime">{{item.time}}</text>
+								<text class="status"> 已完成</text>
+							</view>
+						</template>
+					</uni-list-item>
+				</uni-list>
+				<uni-row class="list1 row1" style="margin: auto;">
+					<uni-col :span="6">
+						<image class="shop1" :src="item.img" mode="aspectFit"></image>
+					</uni-col>
+					<uni-col :span="12" class="shopname">
+						<text space="ensp" style="font-size: 35rpx;">{{item.shopname}}</text>
+					</uni-col>
+					<uni-col :span="5" class="price">
+						<text space="emsp">￥{{item.price}}\n x{{item.num}}</text>
+					</uni-col>
+				</uni-row>
+				<view class="sum"
+					style="margin-bottom: 15rpx ;border-bottom-right-radius: 20rpx;border-bottom-left-radius: 20rpx;">
+					<text class="zongji">共{{item.num}}件商品，总金额</text>
+					<text class="sumprice">￥{{item.price*item.num}}</text>
+				</view>
+
 			</view>
 		</view>
 	</view>
@@ -92,26 +255,26 @@
 					}
 				],
 				shopper: [{
-					time: "2022/04/21 15:31",
-					img: "/static/Rjiangzhong.jpg",
-					shopname: "【江中】健胃消食片\n 12片/盒",
-					price: "15.2",
-					num: "1"
-				},
-				{
-					time: "2022/04/18 08:19",
-					img: "/static/chuangketie.jpg",
-					shopname: "【江中】健胃消食片\n 12片/盒",
-					price: "20.3",
-					num: "4"
-				},
-				{
-					time: "2022/04/15 10:21",
-					img: "/static/Rjiangzhong.jpg",
-					shopname: "【999】感冒灵颗粒\n 10g*9袋/盒",
-					price: "39.9",
-					num: "2"
-				}
+						time: "2022/04/21 15:31",
+						img: "/static/Rjiangzhong.jpg",
+						shopname: "【江中】健胃消食片\n 12片/盒",
+						price: "15.2",
+						num: "1"
+					},
+					{
+						time: "2022/04/18 08:19",
+						img: "/static/chuangketie.jpg",
+						shopname: "【云南白药】创可贴\n 100片/盒",
+						price: "20.3",
+						num: "4"
+					},
+					{
+						time: "2022/04/15 10:21",
+						img: "/static/Rjiangzhong.jpg",
+						shopname: "【999】感冒灵颗粒\n 10g*9袋/盒",
+						price: "39.9",
+						num: "2"
+					}
 				]
 			};
 		},
@@ -129,6 +292,23 @@
 </script>
 
 <style>
+	.btnview {
+		width: 700rpx;
+		margin: auto;
+		background-color: #8bd7ff;
+		border-bottom-left-radius: 20rpx;
+		border-bottom-right-radius: 20rpx;
+		margin-bottom: 15rpx;
+	}
+
+	.btn {
+		width: 250rpx;
+		background-color: #E45656;
+		height: 70rpx;
+		border-radius: 50rpx;
+		line-height: 70rpx;
+	}
+
 	.row1 {
 		background-color: #8bd7ff;
 		border-top: 1rpx #000000 solid;
@@ -158,15 +338,12 @@
 		background-color: #8bd7ff;
 		width: 700rpx;
 		margin: auto;
-		border-bottom-left-radius: 20rpx;
-		border-bottom-right-radius: 20rpx;
-		margin-bottom: 15rpx;
 
 	}
 
 	.shopname {
 		margin-left: 10rpx;
-		margin-top: 30rpx;
+		margin-top: 20rpx;
 		font-size: 30rpx;
 	}
 
@@ -179,15 +356,15 @@
 	}
 
 	.status {
-		margin-left: 150rpx;
+
+		margin-left: 220rpx;
 		color: #ff0000;
 		font-weight: bold;
-		font-size: 35rpx;
+		font-size: 33rpx;
 		font-family: kaiti;
 	}
 
 	.texttime {
-		margin-left: 20rpx;
 		font-size: 35rpx;
 		font-weight: bold;
 		width: 450rpx;
@@ -200,7 +377,7 @@
 		margin: auto;
 		font-weight: bolder;
 		font-family: kaiti;
-		line-height: 125rpx;
+		line-height: 175rpx;
 	}
 
 	,
