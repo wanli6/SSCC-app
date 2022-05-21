@@ -15,22 +15,22 @@
 						style=" margin-left: 10rpx; margin-top: 60rpx; width: 50rpx; height: 50rpx;"></image>
 				</uni-col>
 			</uni-row>
-			<uni-grid @change="clickSort" :column="3" :showBorder="false" style=" margin-top: 20rpx;">
+			<uni-grid  :column="3" :showBorder="false" style=" margin-top: 20rpx;">
 
-				<uni-grid-item style="height:130rpx;text-align: center;">
+				<uni-grid-item style="height:130rpx;text-align: center;" >
 					<image src="../../static/device.png" mode="aspectFit"
-						style="width: 80rpx; height: 80rpx; margin: 0 auto;"></image>
-					<text class="text" style="font-weight: bolder; font-size: 30rpx;">智能设备</text>
+						style="width: 80rpx; height: 80rpx; margin: 0 auto;" @click="clickSort(0)"></image>
+					<text class="text" style="font-weight: bolder; font-size: 30rpx;" @click="clickSort(0)">智能设备</text>
 				</uni-grid-item>
 				<uni-grid-item style="height:130rpx; text-align: center;">
 					<image src="../../static/drug.png" mode="aspectFit"
-						style="width: 70rpx; height: 80rpx; margin: 0 auto;"></image>
-					<text class="text" style="fon	t-weight: bolder; font-size: 30rpx;">常用药</text>
+						style="width: 70rpx; height: 80rpx; margin: 0 auto;" @click="clickSort(1)"></image>
+					<text class="text" style="fon	t-weight: bolder; font-size: 30rpx;" @click="clickSort(1)">常用药</text>
 				</uni-grid-item>
 				<uni-grid-item style="height:130rpx; text-align: center;">
 					<image src="../../static/cooperation.png" mode="aspectFit"
-						style="width: 60rpx; height: 80rpx; margin: 0 auto;"></image>
-					<text class="text" style="font-weight: bolder; font-size: 30rpx;">联系我们</text>
+						style="width: 60rpx; height: 80rpx; margin: 0 auto;" @click="clickSort(2)"></image>
+					<text class="text" style="font-weight: bolder; font-size: 30rpx;" @click="clickSort(2)">联系我们</text>
 				</uni-grid-item>
 			</uni-grid>
 			<image src="../../static/shop1.png" mode="aspectFit" style="width: 750rpx;"></image>
@@ -127,18 +127,15 @@
 				],
 				links: [
 					'/pages/shop/smartDevice',
-					'/pages/shop/smartDevice',
-					'/pages/shop/smartDevice'
+					'/pages/shop/usedfrug',
+					'/pages/shop/us'
 				]
 			}
 		},
 		methods: {
 			clickSort(e) {
-				let {
-					index
-				} = e.detail
 				uni.navigateTo({
-					url: this.links[index]
+					url: this.links[e]
 				})
 			}
 		}
