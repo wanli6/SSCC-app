@@ -20,13 +20,14 @@
 
 <style>
 	.a {
+		margin-top: 80rpx;
 		width: 750rpx;
-		height: 1650rpx;
+		height: 1560rpx;
 	}
 	,
 	.b {
 		position: absolute;
-		margin-top: -550rpx;
+		margin-top: -670rpx;
 		margin-left: 245rpx;
 		width: 300rpx;
 		height: 85rpx;

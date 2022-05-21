@@ -29,7 +29,7 @@
 						<view style="margin-left: 15rpx; font-size: 20rpx;">{{item.drugSale}}</view>
 						<view style="margin-left: 15rpx; font-size: 20rpx;">
 							<text style="font-weight: bolder;">{{item.drugShop}}</text>
-							<text style="margin-left: 180rpx; font-size: 25rpx;">进店></text>
+							<text style="margin-left: 180rpx; font-size: 25rpx;">进店</text>
 						</view>
 					</view>
 				</view>
@@ -70,7 +70,7 @@
 						drugTags: ['抗生素', '处方药', '咽炎'],
 						drugPriece: '￥1798',
 						drugSale: '13人付款',
-						drugShop: '金亿帝旗舰店'
+						drugShop: '金亿官方旗舰店'
 					},
 					{
 						drugImg: '../../static/shop/smartDevice/zhiyangji.jpg',
@@ -80,7 +80,7 @@
 						drugTags: ['抗生素', '处方药', '咽炎'],
 						drugPriece: '￥3880',
 						drugSale: '2000+人付款',
-						drugShop: '欧姆龙官方旗舰店'
+						drugShop: '欧姆官方旗舰店'
 					},
 				]
 			}

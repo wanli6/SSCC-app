@@ -61,8 +61,8 @@
 	  </view> -->
 			<uni-row>
 				<uni-col :span="9" style="margin-top: 30rpx;">
-					<image @click="to1" class="uimg" :src="imgadd" mode="aspectFit"
-						style="border-radius: 50%; margin-top: 100rpx;"></image>
+					<image @click="to1" class="uimg" :src="oldimgadd" mode="scaleToFill"
+						style=" border-radius: 50%; margin-top: 100rpx;"></image>
 				</uni-col>
 				<uni-col :span="10" style="margin-top: 90rpx;">
 					<view style="width: 350rpx;" @click="to1()">
@@ -100,7 +100,7 @@
 
 
 			<view style="background-color: transparent; border-bottom: 4rpx #EEEEEE solid;"
-				v-for="(item,index) in listt">
+				v-for="(item,index) in listt" @click="to5()">
 				<text class=" oldlist1">{{item.name}}</text>
 				<text class=" oldlist1" style="margin-left: 400rpx;">>></text>
 
@@ -121,6 +121,7 @@
 			return {
 				isOld: true,
 				imgadd: "/static/touxiang.jpg",
+				oldimgadd:"/static/oldtouxiang.png",
 				uname: "王同学",
 				oldname:"王老头",
 				usignature: "早睡早起，健康每一天",
