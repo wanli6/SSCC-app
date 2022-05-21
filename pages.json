@@ -180,14 +180,14 @@
 
 	"tabBar": {
 		"color": "#7a7e83",
-		"selectedColor": "#FFD305",
+		"selectedColor": "#11A0F1",
 		"backgroundColor": "#ffffff",
 		"borderStyle": "block",
 		"list": [{
 				"pagePath": "pages/shouye/shouye",
 				"text": "健康主页",
-				"iconPath": "static/home.jpg",
-				"selectedIconPath": "static/home.jpg"
+				"iconPath": "static/tab_icon_2.png",
+				"selectedIconPath": "static/tab_icon_1.png"
 			},
 			{
 				"pagePath": "pages/community/community",

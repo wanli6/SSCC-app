@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="test2" v-if="isOld==false">
+		<view class="test2" v-if="this.isOld==false">
 			<!-- <view style="height: 200rpx;">
 			<text class="title">个人主页</text>
 		</view> -->
@@ -55,7 +55,7 @@
 
 		</view>
 
-		<view class="test2" v-if="isOld==true">
+		<view class="test2" v-if="this.isOld==true">
 			<!-- <view style="height: 200rpx;">
 	   <text class="title">个人主页</text>
 	  </view> -->
@@ -114,8 +114,12 @@
 
 <script>
 	export default {
+		onLoad() {
+			this.getIsOld()
+		},
 		data() {
 			return {
+				isOld: true,
 				imgadd: "/static/touxiang.jpg",
 				uname: "王同学",
 				oldname:"王老头",
@@ -139,6 +143,9 @@
 			}
 		},
 		methods: {
+			getIsOld(){
+							this.isOld = getApp().globalData.isOld
+						},
 			to() {
 				uni.navigateTo({
 					url: './set'

@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view v-if="isOld==false">
+		<view v-if="this.isOld==false">
 			<!-- <view>
 				<text class="title">健康主页 </text>
 			</view> -->
@@ -81,7 +81,7 @@
 			</view>
 		</view>
 
-		<view v-if="isOld==true">
+		<view v-if="this.isOld==true">
 			<!-- <view>
 				<text class="title">健康主页 </text>
 			</view> -->
@@ -160,6 +160,7 @@
 	export default {
 		data() {
 			return {
+				isOld: true,
 				index1: 1,
 				index2: 1,
 				time: 3,
@@ -167,7 +168,13 @@
 				states1: ["不正常", "正常"],
 			}
 		},
+		onLoad() {
+			this.getIsOld()
+		},
 		methods: {
+			getIsOld(){
+				this.isOld = getApp().globalData.isOld
+			},
 			xueya() {
 				uni.navigateTo({
 					url: "./xueya"
