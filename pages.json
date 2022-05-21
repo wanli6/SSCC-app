@@ -123,8 +123,7 @@
 				"navigationBarTitleText": "消息",
 				"enablePullDownRefresh": false
 			}
-		}
-		,
+		},
 		{
 			"path": "pages/user/vip",
 			"style": {
@@ -149,7 +148,7 @@
 				"enablePullDownRefresh": false
 			}
 
-		}, 
+		},
 		{
 			"path": "pages/shop/smartDevice",
 			"style": {
@@ -165,27 +164,53 @@
 				"navigationBarTitleText": "个人订单",
 				"enablePullDownRefresh": false
 			}
+		}, {
+			"path": "pages/dengluzhuce/choose",
+			"style": {
+				"navigationBarTitleText": "选择版本",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/shop/usedfrug",
+			"style": {
+				"navigationBarTitleText": "常用药",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/shop/us",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "联系我们",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/dengluzhuce/choose",
+			"style": {
+				"navigationBarTitleText": "选择版本",
+				"enablePullDownRefresh": false
+			}
+
 		}
-	    ,{
-            "path" : "pages/dengluzhuce/choose",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "选择版本",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        
-        ,{
-            "path" : "pages/community/postDetail",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+
+		, {
+			"path": "pages/community/postDetail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	],
+
+
+
+
 
 	"tabBar": {
 		"color": "#7a7e83",
