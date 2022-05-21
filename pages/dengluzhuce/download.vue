@@ -41,9 +41,27 @@
 		},
 		methods: {
 			toZhuye(){
-				console.log(this.login.username+ " " + this.login.password)
+				
 				let username = this.login.username
 				let password = this.login.password
+				for(var i=0;i<this.users.length;i++){
+					if(this.users[i].username == username){
+						if(this.users[i].password == password){
+							uni.showToast({
+								title:'登录成功',
+								icon:"success",
+								duration:1000
+							})
+							setTimeout(()=>{
+								uni.navigateTo({
+									url:'/pages/dengluzhuce/choose'
+								})
+							},1000)
+							return
+						}
+					}
+				}
+				console.log(this.login.username+ " " + this.login.password)
 				if(!/^[a-zA-Z0-9_-]{3,15}$/.test(username)){
 					uni.showToast({
 						title:'用户名只能包含数字,字母以及-、_，且长度在3-15之间',
@@ -59,27 +77,11 @@
 					})
 					return
 				}
-				for(var i=0;i<this.users.length;i++){
-					if(this.users[i].username == username){
-						if(this.users[i].password == password){
-							uni.showToast({
-								title:'登录成功',
-								icon:"success",
-								duration:1000
-							})
-							setTimeout(()=>{
-								uni.switchTab({
-									url:'/pages/shouye/shouye'
-								})
-							},1000)
-							
-						}
-					}
-				}
+				
 			},
 			ToDetail(){
 				uni.navigateTo({
-					url:"./register"
+					url:"/pages/deluzhuce/register"
 				})
 			}
 			

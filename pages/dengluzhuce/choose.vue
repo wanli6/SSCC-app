@@ -1,20 +1,26 @@
 <template>
 	<view>
-		<button @click="toNormal()" class="button b1" type="primary">老人版本</button>
-		<button @click="toNormal" class="button b2" type="primary">家属版本</button>
+		<button @click="toNormal(1)" class="button b1" type="primary">老人版本</button>
+		<button @click="toNormal(2)" class="button b2" type="primary">家属版本</button>
 	</view>
 </template>
 
 <script>
 	export default {
+		
 		data() {
 			return {
 				
 			}
 		},
+		
 		methods: {
 			
-			toNormal(){
+			toNormal(a){
+				if(a == 2){
+					getApp().globalData.isOld = false
+				}
+				console.log(this.isOld)
 				uni.switchTab({
 					url:'/pages/shouye/shouye'
 				})

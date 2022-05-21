@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view v-if="isOld==false">
+		<view v-if="this.isOld==false">
 			<!-- <view>
 			<text class="title">{{title}}</text>
 		</view> -->
@@ -97,7 +97,7 @@
 
 		</view>
 
-		<view v-if="isOld==true">
+		<view v-if="this.isOld==true">
 			<!-- <view>
 				<text class="title">{{title}}</text>
 			</view> -->
@@ -198,8 +198,12 @@
 
 <script>
 	export default {
+		onLoad() {
+			this.getIsOld()
+		},
 		data() {
 			return {
+				isOld: true,
 				List_data: ['同城', '社区', '联系人'],
 				title_list: ['同城', '长寿社区', '联系人'],
 				title: '长寿社区',
@@ -261,6 +265,9 @@
 			}
 		},
 		methods: {
+			getIsOld(){
+				this.isOld = getApp().globalData.isOld
+			},
 			search() {
  
 			},
