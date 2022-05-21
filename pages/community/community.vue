@@ -1,98 +1,198 @@
 <template>
 	<view>
-		<view>
+		<view v-if="isOld==false">
+			<!-- <view>
 			<text class="title">{{title}}</text>
-		</view>
-		<view>
-			<uni-search-bar radius=20 class="search-bar" placeholder="输入关键词" bgColor="#F8F8F8" @confirm="search" />
-		</view>
-		<view class="sort_nav">
-			<view class="flex_between">
-				<view class="bottom_title">
-					<view class="bottom_item" :class="{'active':isActive==index} " @click="chenked(index)"
-						v-for="(item, index) in List_data" :key="index">
-						{{item}}
+		</view> -->
+			<view>
+				<uni-search-bar radius=20 class="search-bar" placeholder="输入关键词" bgColor="#F8F8F8" @confirm="search" />
+			</view>
+			<view class="sort_nav">
+				<view class="flex_between">
+					<view class="bottom_title">
+						<view class="bottom_item" :class="{'active':isActive==index} " @click="chenked(index)"
+							v-for="(item, index) in List_data" :key="index">
+							{{item}}
+						</view>
 					</view>
 				</view>
 			</view>
-		</view>
-		<view>
-			<view class="nav_item" v-if="isActive==0">
-				<view v-for="(item, index) in locals" :key="index">
-					<uni-card title="基础卡片" sub-title="副标题" extra="额外信息" padding="10px 0">
-						<template v-slot:title>
-							<uni-list>
-								<uni-list-item thumb-size="lg" thumb="../../static/tab_icon_8.png"
-									:title="item.useNick" />
-							</uni-list>
-						</template>
-						<text class="uni-body uni-mt-5" style="font-size: 40rpx;">{{item.content.text}}</text>
-						<image style="width: 100%;" :src="item.content.img"></image>
-
-						<view slot="actions" class="card-actions">
-							<view class="card-actions-item" @click="actionsClick('分享')">
-								<uni-icons type="redo" size="25" color="#999"></uni-icons>
-								<text style="font-size: 40rpx;" class="card-actions-item-text">分享</text>
-							</view>
-							<view class="card-actions-item" @click="actionsClick('点赞')">
-								<uni-icons type="heart" size="25" color="#999"></uni-icons>
-								<text style="font-size: 40rpx;" class="card-actions-item-text">点赞</text>
-							</view>
-							<view class="card-actions-item" @click="actionsClick('评论')">
-								<uni-icons type="chatbubble" size="25" color="#999"></uni-icons>
-								<text style="font-size: 40rpx;" class="card-actions-item-text">评论</text>
-							</view>
-						</view>
-
-
-					</uni-card>
-				</view>
-
-			</view>
-
-			<view class="nav_item" v-if="isActive==1">
-				<view class="blank"></view>
-				<image class="banner" src="../../static/community/communityBanner.png"></image>
-
-				<view class="blank"></view>
-				<view>
-					<uni-list class="uni-list">
-						<!-- 列表渲染 -->
-						<uni-list-item clickable @click="toPostDetail(item.postId)" v-for="(item, index) in posts"
-							:key="index">
-							<!-- 通过header插槽定义列表左侧图片 -->
-							<template v-slot:header>
-								<image class="avatar" :src="item.postImg" mode="aspectFit"></image>
+			<view>
+				<view class="nav_item" v-if="isActive==0">
+					<view v-for="(item, index) in locals" :key="index">
+						<uni-card title="基础卡片" sub-title="副标题" extra="额外信息" padding="10px 0">
+							<template v-slot:title>
+								<uni-list>
+									<uni-list-item thumb-size="lg" thumb="../../static/tab_icon_8.png"
+										:title="item.useNick" />
+								</uni-list>
 							</template>
-							<!-- 通过body插槽定义布局 -->
-							<template v-slot:body>
-								<view class="body">
-									<text class="main">{{item.title}}\n</text>
-									<text class="desc">{{item.description}}</text>
+							<text class="uni-body uni-mt-5" style="font-size: 40rpx;">{{item.content.text}}</text>
+							<image style="width: 100%;" :src="item.content.img"></image>
+
+							<view slot="actions" class="card-actions">
+								<view class="card-actions-item" @click="actionsClick('分享')">
+									<uni-icons type="redo" size="25" color="#999"></uni-icons>
+									<text style="font-size: 40rpx;" class="card-actions-item-text">分享</text>
 								</view>
-							</template>
-						</uni-list-item>
-					</uni-list>
-				</view>
-			</view>
-			<view class="blank"></view>
-			<view class="blank"></view>
-			<view class="nav_item" v-if="isActive==2">
-				<view>
-					<view class="messagebox">
+								<view class="card-actions-item" @click="actionsClick('点赞')">
+									<uni-icons type="heart" size="25" color="#999"></uni-icons>
+									<text style="font-size: 40rpx;" class="card-actions-item-text">点赞</text>
+								</view>
+								<view class="card-actions-item" @click="actionsClick('评论')">
+									<uni-icons type="chatbubble" size="25" color="#999"></uni-icons>
+									<text style="font-size: 40rpx;" class="card-actions-item-text">评论</text>
+								</view>
+							</view>
 
-						<view v-for="(item, index) in contacts" :key="index">
-							<view class="list-item">
-								<uni-list-chat :title="item.userName" :avatar="item.userAvatar" :note="item.userMessage"
-									:time="item.time" @click="messageDetial(index)"></uni-list-chat>
+
+						</uni-card>
+					</view>
+
+				</view>
+
+				<view class="nav_item" v-if="isActive==1">
+					<view class="blank"></view>
+					<image class="banner" src="../../static/community/communityBanner.png"></image>
+
+					<view class="blank"></view>
+					<view>
+						<uni-list class="uni-list">
+							<!-- 列表渲染 -->
+							<uni-list-item clickable @click="toPostDetail(item.postId)" v-for="(item, index) in posts"
+								:key="index">
+								<!-- 通过header插槽定义列表左侧图片 -->
+								<template v-slot:header>
+									<image class="avatar" :src="item.postImg" mode="aspectFit"></image>
+								</template>
+								<!-- 通过body插槽定义布局 -->
+								<template v-slot:body>
+									<view class="body">
+										<text class="main">{{item.title}}\n</text>
+										<text class="desc">{{item.description}}</text>
+									</view>
+								</template>
+							</uni-list-item>
+						</uni-list>
+					</view>
+				</view>
+				<view class="blank"></view>
+				<view class="blank"></view>
+				<view class="nav_item" v-if="isActive==2">
+					<view>
+						<view class="messagebox">
+
+							<view v-for="(item, index) in contacts" :key="index">
+								<view class="list-item">
+									<uni-list-chat :title="item.userName" :avatar="item.userAvatar"
+										:note="item.userMessage" :time="item.time" @click="messageDetial(index)">
+									</uni-list-chat>
+								</view>
 							</view>
 						</view>
 					</view>
-				</view>
 
+				</view>
 			</view>
+
 		</view>
 
+		<view v-if="isOld==true">
+			<!-- <view>
+				<text class="title">{{title}}</text>
+			</view> -->
+			<view>
+				<uni-search-bar radius=20 class="search-bar" placeholder="输入关键词" bgColor="#F8F8F8" @confirm="search" />
+			</view>
+			<view class="sort_nav">
+				<view class="flex_between">
+					<view class="bottom_title">
+						<view class="bottom_item" :class="{'active':isActive==index} " @click="chenked(index)"
+							v-for="(item, index) in List_data" :key="index">
+							{{item}}
+						</view>
+					</view>
+				</view>
+			</view>
+			<view>
+				<view class="nav_item" v-if="isActive==0">
+					<view v-for="(item, index) in locals" :key="index">
+						<uni-card title="基础卡片" sub-title="副标题" extra="额外信息" padding="10px 0">
+							<template v-slot:title>
+								<uni-list>
+									<uni-list-item thumb-size="lg" thumb="../../static/tab_icon_8.png"
+										:title="item.useNick" />
+								</uni-list>
+							</template>
+							<text class="uni-body uni-mt-5" style="font-size: 43rpx;">{{item.content.text}}</text>
+							<image style="width: 100%;" :src="item.content.img"></image>
+
+							<view slot="actions" class="card-actions">
+								<view class="card-actions-item" @click="actionsClick('分享')">
+									<uni-icons type="redo" size="25" color="#999"></uni-icons>
+									<text style="font-size: 40rpx;" class="card-actions-item-text">分享</text>
+								</view>
+								<view class="card-actions-item" @click="actionsClick('点赞')">
+									<uni-icons type="heart" size="25" color="#999"></uni-icons>
+									<text style="font-size: 40rpx;" class="card-actions-item-text">点赞</text>
+								</view>
+								<view class="card-actions-item" @click="actionsClick('评论')">
+									<uni-icons type="chatbubble" size="25" color="#999"></uni-icons>
+									<text style="font-size: 40rpx;" class="card-actions-item-text">评论</text>
+								</view>
+							</view>
+
+
+						</uni-card>
+					</view>
+
+				</view>
+
+				<view class="nav_item" v-if="isActive==1">
+					<view class="blank"></view>
+					<image class="banner" src="../../static/community/communityBanner.png"></image>
+
+					<view class="blank"></view>
+					<view>
+						<uni-list class="uni-list">
+							<!-- 列表渲染 -->
+							<uni-list-item clickable @click="toPostDetail(item.postId)" v-for="(item, index) in posts"
+								:key="index">
+								<!-- 通过header插槽定义列表左侧图片 -->
+								<template v-slot:header>
+									<image class="avatar" style="height: 230rpx;" :src="item.postImg" mode="aspectFit"></image>
+								</template>
+								<!-- 通过body插槽定义布局 -->
+								<template v-slot:body>
+									<view class="body" style="margin-left: 20rpx;">
+										<text class="main" style="font-size: 50rpx; width: 100rpx;">{{item.title}}</text>
+										<text class="desc" style="margin-left: 10rpx; font-size: 43rpx; line-height: 60rpx;"> {{item.description2}}</text>
+									</view>
+								</template>
+							</uni-list-item>
+						</uni-list>
+					</view>
+				</view>
+				<view class="blank"></view>
+				<view class="blank"></view>
+				<view class="nav_item" v-if="isActive==2">
+					<view>
+						<view class="messagebox">
+
+							<view v-for="(item, index) in contacts" :key="index">
+								<view class="list-item">
+									<uni-list-chat :title="item.userName" :avatar="item.userAvatar"
+										:note="item.userMessage" :time="item.time" @click="messageDetial(index)">
+									</uni-list-chat>
+								</view>
+							</view>
+						</view>
+					</view>
+
+				</view>
+			</view>
+
+		</view>
 	</view>
 </template>
 
@@ -108,19 +208,22 @@
 						postId: 1,
 						postImg: '../../static/community/posts/postImg1.png',
 						title: '养生',
-						description: '养生，动词也，亦可为名词。原指道家过各种方法颈养生命、增强体质、预防疾病，从而达到延年益寿的一种医事活动。'
+						description: '养生，动词也，亦可为名词。原指道家过各种方法颈养生命、增强体质、预防疾病，从而达到延年益寿的一种医事活动。',
+						description2:'动词也，亦可为名词。原指道家过各种方法颈养生命、增强体质......'
 					},
 					{
 						postId: 2,
 						postImg: '../../static/community/posts/postImg2.png',
 						title: '慢性病',
-						description: '慢性病共病的情况在老年群体中较为常见，"多病共存"已成为日益严重的公共卫生问题，但目前我国老年人慢性病共病现状及共病模式研究相对缺乏。'
+						description: '慢性病共病的情况在老年群体中较为常见，"多病共存"已成为日益严重的公共卫生问题，但目前我国老年人慢性病共病现状及共病模式研究相对缺乏。',
+						description2:'共病的情况在老年群体中较为常见，"多病共存"已成为......'
 					},
 					{
 						postId: 3,
 						postImg: '../../static/community/posts/postImg3.jpg',
 						title: '心脏病',
-						description: '心脏病描述的是一系列影响您心脏的病症。心脏病范畴下的疾病包括血管疾病，例如冠状动脉疾病;心率问题（心律失常）;以及出生时就有的心脏缺陷（先天性心脏缺陷）。'
+						description: '心脏病描述的是一系列影响您心脏的病症。心脏病范畴下的疾病包括血管疾病，例如冠状动脉疾病;心率问题（心律失常）;以及出生时就有的心脏缺陷（先天性心脏缺陷）。',
+						description2:'描述的是一系列影响您心脏的病症。心脏病范畴下的疾病......'
 					},
 				],
 				locals: [{
@@ -128,7 +231,7 @@
 					useNick: '王爷爷',
 					content: {
 						text: '开心大药房的药挺便宜的，种类也挺多。',
-						img: '../../static/community/locals/localsImg1.png',
+						img: '../../static/view.jpg',
 					},
 					likeMessage: '山并、心好吃芫菱中、无语、雪娴诗、风再起时、EDG干年老粉、Chi、等48人觉得很赞'
 				}, ],
@@ -159,7 +262,7 @@
 		},
 		methods: {
 			search() {
-
+ 
 			},
 			toPostDetail(post) {
 				uni.navigateTo({
@@ -322,11 +425,12 @@
 		width: 80%;
 		margin: auto;
 		border-radius: 50rpx;
-		margin-top: 40rpx;
+		margin-top: 100rpx;
 		border-style: solid;
 		border-width: 5rpx;
 		border-color: #11A0F1;
 	}
+
 
 	.blank {
 		width: 100%;
