@@ -100,7 +100,7 @@
 
 
 			<view style="background-color: transparent; border-bottom: 4rpx #EEEEEE solid;"
-				v-for="(item,index) in listt">
+				v-for="(item,index) in listt" @click="to5()">
 				<text class=" oldlist1">{{item.name}}</text>
 				<text class=" oldlist1" style="margin-left: 400rpx;">>></text>
 

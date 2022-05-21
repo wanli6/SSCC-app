@@ -351,7 +351,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../HBuilderX.3.3.13.20220314.full/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.a {\n\twidth: 750rpx;\n\theight: 1650rpx;\n}\n.b {\n\tposition: absolute;\n\tmargin-top: -550rpx;\n\tmargin-left: 245rpx;\n\twidth: 300rpx;\n\theight: 85rpx;\n\tborder-radius: 30rpx;\n\tbackground-color: transparent;\n}\n", ""]);
+exports.push([module.i, "\n.a {\n\tmargin-top: 80rpx;\n\twidth: 750rpx;\n\theight: 1560rpx;\n}\n.b {\n\tposition: absolute;\n\tmargin-top: -670rpx;\n\tmargin-left: 245rpx;\n\twidth: 300rpx;\n\theight: 85rpx;\n\tborder-radius: 30rpx;\n\tbackground-color: transparent;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -7206,7 +7206,12 @@ var render = function() {
                       "background-color": "transparent",
                       "border-bottom": "4rpx #EEEEEE solid"
                     },
-                    attrs: { _i: "53-" + $31 }
+                    attrs: { _i: "53-" + $31 },
+                    on: {
+                      click: function($event) {
+                        return _vm.$handleViewEvent($event)
+                      }
+                    }
                   },
                   [
                     _c(
