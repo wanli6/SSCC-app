@@ -25,7 +25,7 @@
 				<uni-grid-item style="height:130rpx; text-align: center;">
 					<image src="../../static/drug.png" mode="aspectFit"
 						style="width: 70rpx; height: 80rpx; margin: 0 auto;" @click="clickSort(1)"></image>
-					<text class="text" style="fon	t-weight: bolder; font-size: 30rpx;" @click="clickSort(1)">常用药</text>
+					<text class="text" style="font-weight: bolder; font-size: 30rpx;" @click="clickSort(1)">常用药</text>
 				</uni-grid-item>
 				<uni-grid-item style="height:130rpx; text-align: center;">
 					<image src="../../static/cooperation.png" mode="aspectFit"

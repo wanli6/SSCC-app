@@ -42,7 +42,8 @@
 	.a {
 		z-index: -1;
 		width: 750rpx;
-		height: 1650rpx;
+		height: 1600rpx;
+		margin-top: -80rpx;
 	}
 	.date-title{
 		margin-left: 30rpx;

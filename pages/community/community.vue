@@ -181,7 +181,7 @@
 
 							<view v-for="(item, index) in contacts" :key="index">
 								<view class="list-item">
-									<uni-list-chat :title="item.userName" :avatar="item.userAvatar"
+									<uni-list-chat :title="item.olduserName" :avatar="item.userAvatar"
 										:note="item.userMessage" :time="item.time" @click="messageDetial(index)">
 									</uni-list-chat>
 								</view>
@@ -198,9 +198,9 @@
 
 <script>
 	export default {
-		onLoad() {
+		onShow() {
 			this.getIsOld()
-		},
+		}, 
 		data() {
 			return {
 				isOld: true,
@@ -232,7 +232,7 @@
 				],
 				locals: [{
 					userAvatar: '../../static/tab_icon_8.png',
-					useNick: '王爷爷',
+					useNick: '老王',
 					content: {
 						text: '开心大药房的药挺便宜的，种类也挺多。',
 						img: '../../static/view.jpg',
@@ -241,20 +241,25 @@
 				}, ],
 				contacts: [{
 						userName: '父亲',
+						olduserName:'儿子',
 						userAvatar: '../../static/tab_icon_8.png',
 						userMessage: '这几天感觉不错',
+						olduserMessage:'工作压力不要太大',
 						time: "2022-05-02 20:20",
 						isMe: false
 					},
 					{
 						userName: '母亲',
+						olduserName:'女儿',
 						userAvatar: '../../static/tab_icon_8.png',
 						userMessage: '那就好，记得按时吃药',
+						olduserMessage:'周末不上班回来吃饭',
 						time: "2022-05-02 20:31",
 						isMe: false
 					},
 					{
 						userName: '姐姐',
+						olduserName:'老伴儿',
 						userAvatar: '../../static/tab_icon_8.png',
 						userMessage: '药还有多少，我明天再去买点',
 						time: "2022-05-02 20:50",
