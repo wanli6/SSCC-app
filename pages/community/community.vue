@@ -277,8 +277,9 @@
  
 			},
 			toPostDetail(post) {
+				console.log("click "+post)
 				uni.navigateTo({
-					url: "/pages/shop/postDetial?title=" + post
+					url: "/pages/community/postDetail?id=" + post
 				})
 			},
 			messageDetial(index) {

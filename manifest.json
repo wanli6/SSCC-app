@@ -2,7 +2,7 @@
     "name" : "寿寿长春",
     "appid" : "__UNI__33B001E",
     "description" : "",
-    "versionName" : "1.0.1",
+    "versionName" : "1.0.2",
     "versionCode" : "100",
     "transformPx" : false,
     /* 5+App特有相关 */
@@ -44,9 +44,7 @@
             "ios" : {},
             /* SDK配置 */
             "sdkConfigs" : {
-                "ad" : {
-                    "360" : {}
-                },
+                "ad" : {},
                 "oauth" : {
                     "univerify" : {}
                 }

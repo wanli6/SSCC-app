@@ -23,8 +23,8 @@ Vue.prototype.users = [
 		password: 'Wangmazi123',
 	},
 	{
-		username: '1',
-		password: '1',
+		username: 'sscc',
+		password: 'sscc',
 	}
 ];
 

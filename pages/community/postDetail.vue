@@ -26,8 +26,9 @@
 
 <script>
 	export default {
-		onLoad() {
-			this.currentPost = this.post[0]
+		onLoad:function(arg) {
+			console.log(arg.id)
+			this.currentPost = this.post[arg.id-1]
 		},
 		data() {
 			return {
