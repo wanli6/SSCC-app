@@ -13,8 +13,18 @@
 			<template v-slot:body>
 				<view style="height: 70rpx;">
 					<text
-						style="font-size:33rpx; font-weight: bolder; margin-left: 20rpx; line-height: 70rpx;">消息推送</text>
+						style="font-size:33rpx; font-weight: bolder; margin-left: 20rpx; line-height: 70rpx;">广告推送</text>
 					<switch checked style="margin-left: 425rpx;" />
+				</view>
+			</template>
+		</uni-list-item>
+		
+		<uni-list-item >
+			<template v-slot:body>
+				<view style="height: 70rpx;">
+					<text
+						style="font-size:33rpx; font-weight: bolder; margin-left: 20rpx; line-height: 70rpx;">老人模式</text>
+					<switch :checked="isOld" style="margin-left: 425rpx;" @change="swich" />
 				</view>
 			</template>
 		</uni-list-item>
@@ -24,11 +34,31 @@
 
 <script>
 	export default {
-		methods: {
-			to(){
+		onShow() {
+			this.getIsOld()
+		},
+		data() {
+			return {
+				isOld: ''
+			}
+		},
+		methods: {			
+			swich: function(e) {
+				if (e.detail.value == true){
+					getApp().globalData.isOld = true
+					this.old=true}
+				else{
+					getApp().globalData.isOld = false
+					this.old=true}
+				console.log(getApp().globalData.isOld)
+			},
+			to() {
 				uni.navigateTo({
-					url:'./personal'
+					url: './personal'
 				})
+			},
+			getIsOld() {
+				this.isOld = getApp().globalData.isOld
 			}
 		}
 	}

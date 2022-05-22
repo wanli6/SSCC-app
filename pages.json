@@ -205,6 +205,13 @@
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/user/upload",
+			"style": {
+				"navigationBarTitleText": "病历上传",
+				"enablePullDownRefresh": false
+			}
+
 		}
 	],
 

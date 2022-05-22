@@ -44,7 +44,7 @@
 			</uni-grid>
 
 			<uni-list v-for="(item,index) in listt" style="background: transparent;">
-				<uni-list-item clickable @click="to5()" style="background: transparent;">
+				<uni-list-item clickable @click="to5(item.src)" style="background: transparent;">
 					<template v-slot:body>
 						<text class="slot-box slot-text list1">{{item.name}}</text>
 						<text class="slot-box slot-text list1" style="margin-left: 500rpx;">>></text>
@@ -100,7 +100,7 @@
 
 
 			<view style="background-color: transparent; border-bottom: 4rpx #EEEEEE solid;"
-				v-for="(item,index) in listt" @click="to5()">
+				v-for="(item,index) in listt" @click="to5(item.src)">
 				<text class=" oldlist1">{{item.name}}</text>
 				<text class=" oldlist1" style="margin-left: 400rpx;">>></text>
 
@@ -114,8 +114,10 @@
 
 <script>
 	export default {
-		onLoad() {
+		
+		onShow(){
 			this.getIsOld()
+			console.log(getApp().globalData.isOld)
 		},
 		data() {
 			return {
@@ -138,7 +140,7 @@
 						src: ''
 					}, {
 						name: "病历上传",
-						src: ''
+						src: './upload'
 					}
 				]
 			}
@@ -172,9 +174,9 @@
 					url: './collect'
 				})
 			},
-			to5() {
+			to5(a) {
 				uni.navigateTo({
-					url: './myorder'
+					url: a
 				})
 			}
 		}

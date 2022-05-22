@@ -1,6 +1,6 @@
 <template>
 	<view style="overflow-x: hidden;">
-		<view class="bg">
+		<view class="bg" >
 			<image class="bg-img" src="/static/use/vip/bg.png" mode=""></image>
 		</view>
 		
@@ -13,15 +13,32 @@
 		<view class="info" :style="{marginTop: statusBarHeight + 44 + 'px'}">
 			<image class="info-bg" src="/static/use/vip/info-bg.png" mode=""></image>
 			
-			<view class="info-content">
+			<view class="info-content" v-if="this.isOld==true">
+				<view class="info-avatar">
+					<image class="info-avatar-pic" :src=oldimg style="border-radius: 50%;" mode=""></image>
+				</view>
+				
+				<view class="info-name">
+					<text class="info-name">{{oldname}}</text>
+					<text class="info-level">升级至尊会员享额外特权</text>
+				</view>
+			</view>
+			
+			
+			<view class="info-content" v-if="this.isOld==false">
 				<view class="info-avatar">
 					<image class="info-avatar-pic" :src=imgadd style="border-radius: 50%;" mode=""></image>
 				</view>
+				
 				<view class="info-name">
 					<text class="info-name">{{uname}}</text>
 					<text class="info-level">升级至尊会员享额外特权</text>
 				</view>
 			</view>
+		
+			
+			
+			
 			
 			<view class="info-asset">
 				<view class="info-asset-item">
@@ -72,9 +89,15 @@
 <script>
 	const statusBarHeight = uni.getSystemInfoSync().statusBarHeight
 	export default {
+		onShow() {
+			this.getIsOld()
+		},
 		data() {
 			return {
+				isOld:'',
 				imgadd:"/static/touxiang.jpg",
+				oldimg:"/static/oldtouxiang.png",
+				oldname:"王老头",
 				uname:"王同学",
 				statusBarHeight,
 				current: 0,
@@ -160,6 +183,9 @@
 			}
 		},
 		methods: {
+			getIsOld() {
+				this.isOld = getApp().globalData.isOld
+			},
 			rechargeChange(index) {
 				this.current = index
 			},
