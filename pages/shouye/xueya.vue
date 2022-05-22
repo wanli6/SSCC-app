@@ -1,7 +1,7 @@
 <template>
 	<view class="whole">
 			<text class="date-title" space="nbsp">{{date}}</text>
-			<view style="height: 30rpx;"></view>
+			
 			<view>
 				<image src="../../static/shouye/xueya.png" class="a"></image>
 			</view>
@@ -42,11 +42,10 @@
 	.a {
 		z-index: -1;
 		width: 750rpx;
-		height: 1250rpx;
+		height: 1650rpx;
 	}
 	.date-title{
 		margin-left: 30rpx;
-		margin-bottom: 50rpx;
 		font-size: 40rpx;
 		height: 100rpx;
 		font-weight: bold;

@@ -45,10 +45,7 @@
             /* SDK配置 */
             "sdkConfigs" : {
                 "ad" : {
-                    "360" : {},
-                    "csj" : {},
-                    "gdt" : {},
-                    "ks" : {}
+                    "360" : {}
                 },
                 "oauth" : {
                     "univerify" : {}
