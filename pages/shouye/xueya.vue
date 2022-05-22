@@ -42,11 +42,11 @@
 	.a {
 		z-index: -1;
 		width: 750rpx;
-		height: 1250rpx;
+		height: 1600rpx;
+		margin-top: -80rpx;
 	}
 	.date-title{
 		margin-left: 30rpx;
-		margin-bottom: 50rpx;
 		font-size: 40rpx;
 		height: 100rpx;
 		font-weight: bold;

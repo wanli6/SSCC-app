@@ -65,7 +65,7 @@
 					</uni-col>
 
 					<uni-col :span="5">
-						<button class="detail" @click="xueya">详情</button>
+						<button class="detail" @click="xuetang">详情</button>
 					</uni-col>
 				</uni-row>
 
@@ -143,7 +143,7 @@
 					</uni-col>
 
 					<uni-col :span="5">
-						<button class="detail" @click="xueya">详情</button>
+						<button class="detail" @click="xuetang()">详情</button>
 					</uni-col>
 				</uni-row>
 				<view style="margin-left: 20rpx; width: 630rpx;">
@@ -168,7 +168,7 @@
 				states1: ["不正常", "正常"],
 			}
 		},
-		onLoad() {
+		onShow() {
 			this.getIsOld()
 		},
 		methods: {

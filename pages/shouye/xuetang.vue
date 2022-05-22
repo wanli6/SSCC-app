@@ -53,6 +53,5 @@
 	}
 	.whole{
 		margin: auto;
-		
 	}
 </style>
